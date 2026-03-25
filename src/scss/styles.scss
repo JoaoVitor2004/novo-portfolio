@@ -1,0 +1,431 @@
+@import "./reset.scss";
+@import "./swipper.scss";
+@import "./button.scss";
+
+
+@font-face {
+    font-family: Badabom;
+    src: url("../assets/fonts/badaboom_bb/BADABB__.TTF") format(truetype);
+}
+
+@font-face {
+    font-family: Komigo;
+    src: url("../assets/fonts/komigo/Komigo3D-Regular.ttf") format(truetype);
+}
+
+@mixin Grid() {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 300px));
+}
+
+@mixin Linha() {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 20px;
+}
+
+.linha-main {
+    @include Linha();
+    background-color: #0000002c;
+}
+
+.linha-rodape {
+    @include Linha();
+    background-color: #ffffff62;
+}
+
+.contato {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    background: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    background-color: #000;
+
+    &:has(.links-rodape) {
+        background-color: #fff;
+    }
+
+    color: #fff;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    z-index: 999;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    @media (width < 550px) {
+        right: 20px;
+    }
+
+    img {
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    li a {
+        font-size: 20px;
+        font-weight: normal;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.redes-sociais i {
+    font-size: 30px;
+
+    @media (width < 500px) {
+        font-size: 20px;
+    }
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    padding: 3rem 10rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .navegacao {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            color: #000;
+            font-weight: bolder;
+            font-size: 3rem;
+
+            @media (width < 500px) {
+                font-size: 2rem;
+            }
+        }
+
+        @media (width < 500px) {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+}
+
+
+main {
+
+    .hero {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20rem;
+
+        .dev {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 1200px;
+            max-width: 100%;
+            height: 100%;
+            padding: 30px;
+
+            @media (width < 768px) {
+                flex-direction: column;
+            }
+
+            .texts {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+
+                @media (width < 768px) {
+                    position: relative;
+                    top: 50px;
+                }
+
+                h1 {
+                    width: 100%;
+                    font-size: 8vw;
+                    font-weight: 100;
+                    letter-spacing: 20px;
+                    font-family: "Badabom";
+
+                    @media (width < 500px) {
+                        font-size: 7vw;
+                        letter-spacing: 10px;
+                    }
+                }
+
+                h2 {
+                    font-size: 10vw;
+                    font-family: "Komigo";
+                }
+            }
+
+            img {
+                max-width: 100%;
+                width: 500px;
+                height: 100%;
+
+                @media (width < 768px) {
+                    object-fit: contain;
+                    height: 500px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .btn-contato {
+            width: 150px;
+            padding: 12px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .tecnologias {
+        width: 100%;
+        min-height: 90vh;
+        padding: 0 10rem;
+        margin-bottom: 12rem;
+
+        @media (width < 550px) {
+            padding: 0 5rem;
+        }
+
+        h2 {
+            font-size: 6rem;
+            margin-bottom: 20px;
+
+            @media (width < 550px) {
+                font-size: 9vw;
+                text-align: center;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 100px;
+
+            @media (width < 550px) {
+                text-align: center;
+            }
+        }
+
+        .lista-tecnologias {
+            @include Grid();
+            margin: 0 auto;
+
+            li {
+                position: relative;
+            }
+
+            li .background {
+                position: absolute;
+                width: 100%;
+                height: 0%;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(77, 54, 208, 1);
+                z-index: -1;
+                border-radius: 15px;
+                transition: 0.4s ease-in-out;
+            }
+
+            li:hover {
+                cursor: pointer;
+                color: #fff;
+            }
+
+            li:hover .background {
+                height: 100%;
+            }
+
+            li .container-tec {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            }
+
+            li .container-tec .icon {
+                width: 60px;
+                font-size: 60px;
+                margin: 0 auto;
+                object-fit: contain;
+            }
+
+            li h3 {
+                text-align: center;
+                font-size: 22px;
+                font-weight: bolder;
+            }
+
+            .container-tec .btn-tec {
+                width: 150px;
+                padding: 12px;
+                background-color: #1f1f1f;
+                color: #fff;
+                border-radius: 25px;
+            }
+        }
+    }
+
+    .container-projetos {
+        width: 100%;
+        min-height: 80vh;
+        padding: 0 10rem;
+
+        @media (width < 550px) {
+            padding: 0 3rem;
+        }
+
+        h2 {
+            font-size: 6rem;
+            margin-bottom: 20px;
+
+            @media (width < 550px) {
+                font-size: 9vw;
+                text-align: center;
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 50px;
+
+            @media (width < 550px) {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    min-height: 50vh;
+    background-color: #202020;
+    padding: 10rem 5rem;
+
+    .rodape {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        color: #fff;
+
+        .formulario {
+            display: flex;
+            justify-content: space-between;
+
+            @media (width < 800px) {
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .descricao-contato {
+
+                @media (width < 800px) {
+                    margin-bottom: 40px;
+                }
+
+                h2 {
+                    font-size: 6rem;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+
+            form {
+                width: 300px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .input {
+                    font-size: 14px;
+                    padding: 10px;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    color: #fff;
+                    border-bottom: 1.5px solid #ffffffa6;
+                    padding-bottom: 10px;
+                }
+
+                .btn-submit {
+                    width: 150px;
+                    background: #000;
+                    color: #fff;
+                    padding: 12px;
+                    border: none;
+                    cursor: pointer;
+
+                    @media (width < 800px) {
+                        margin:  0 auto;
+                    }
+                }
+            }
+        }
+
+        .contato-rodape {
+            display: flex;
+            justify-content: space-between;
+
+            @media (width < 500px) {
+                text-align: center;
+                gap: 50px;
+                flex-direction: column;
+            }
+
+            a {
+                color: #fff;
+                font-size: 25px;
+                font-weight: bolder;
+            }
+
+
+        }
+    }
+}

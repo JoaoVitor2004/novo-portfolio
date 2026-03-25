@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "sass": "^1.98.0",
+    "toastify-js": "^1.12.0"
+  },
+  "scripts": {
+    "sass": "npx sass --watch ./src/scss/styles.scss ./src/css/styles.css"
+  }
+}
