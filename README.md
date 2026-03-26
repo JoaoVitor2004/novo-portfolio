@@ -6,7 +6,7 @@ Landing page responsiva a dispositivos menores abordando um pouco da minha traje
 
 ## ⚙️ Acessar o projeto
 
-[Clique aqui](https://github.com/JoaoVitor2004/novo-portfolio)
+[Clique aqui](https://joaovitor2004.github.io/novo-portfolio/)
 
 ## 🛠️ Tecnologias utilizadas
 
