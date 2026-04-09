@@ -390,17 +390,31 @@ footer {
                 max-width: 100%;
                 display: flex;
                 flex-direction: column;
-                gap: 30px;
 
-                .input {
-                    font-size: 14px;
-                    padding: 10px;
-                    background: none;
-                    border: none;
-                    outline: none;
-                    color: #fff;
-                    border-bottom: 1.5px solid #ffffffa6;
-                    padding-bottom: 10px;
+                .container-input {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 30px;
+                    gap: 20px;
+
+                    label {
+                        font-size: 14px;
+                    }
+
+                    .input {
+                        font-size: 14px;
+                        background: none;
+                        border: none;
+                        outline: none;
+                        color: #fff;
+                        border: 1.5px solid #ffffff60;
+                        border-radius: 10px;
+                        padding: 10px;
+                    }
+
+                    .input.border-0 {
+                        border-radius: 0px;
+                    }
                 }
 
                 .btn-submit {
@@ -412,7 +426,7 @@ footer {
                     cursor: pointer;
 
                     @media (width < 800px) {
-                        margin:  0 auto;
+                        margin: 0 auto;
                     }
                 }
             }

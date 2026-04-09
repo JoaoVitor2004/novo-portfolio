@@ -493,17 +493,28 @@ footer .rodape .formulario form {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
-footer .rodape .formulario form .input {
+footer .rodape .formulario form .container-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+footer .rodape .formulario form .container-input label {
   font-size: 14px;
-  padding: 10px;
+}
+footer .rodape .formulario form .container-input .input {
+  font-size: 14px;
   background: none;
   border: none;
   outline: none;
   color: #fff;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.6509803922);
-  padding-bottom: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3764705882);
+  border-radius: 10px;
+  padding: 10px;
+}
+footer .rodape .formulario form .container-input .input.border-0 {
+  border-radius: 0px;
 }
 footer .rodape .formulario form .btn-submit {
   width: 150px;
