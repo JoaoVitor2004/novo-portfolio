@@ -159,6 +159,7 @@ main {
                 align-items: center;
                 justify-content: center;
                 position: absolute;
+                z-index: -4;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -200,15 +201,6 @@ main {
                     margin: 0 auto;
                 }
             }
-        }
-
-        .btn-contato {
-            width: 150px;
-            padding: 12px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            cursor: pointer;
         }
     }
 

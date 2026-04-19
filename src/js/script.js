@@ -6,9 +6,20 @@ const message = document.querySelector("#message")
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 ScrollSmoother.create({
-    smooth: 2,
-    effects: true
+	smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
+	effects: true, // looks for data-speed and data-lag attributes on elements
+	smoothTouch: 0.1 // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
 });
+
+gsap.from("#img-hero", {
+    y: -100,
+    duration: 2
+})
+
+gsap.from("#texts", {
+    opacity: 0,
+    duration: 2
+})
 
 const checkEmail = (value) => {
     const regex = new RegExp(

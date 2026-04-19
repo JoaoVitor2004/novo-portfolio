@@ -100,6 +100,8 @@ li {
 }
 
 .button {
+  position: relative;
+  z-index: 999;
   line-height: 1;
   background-color: transparent;
   cursor: pointer;
@@ -275,6 +277,7 @@ main .hero .dev .texts {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: -4;
   top: 0;
   left: 0;
   width: 100%;
@@ -315,14 +318,6 @@ main .hero .dev .img-hero {
     height: 500px;
     margin: 0 auto;
   }
-}
-main .hero .btn-contato {
-  width: 150px;
-  padding: 12px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
 }
 main .tecnologias {
   width: 100%;
