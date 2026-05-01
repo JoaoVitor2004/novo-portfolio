@@ -36,6 +36,30 @@
     background-color: #ffffff62;
 }
 
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 20vw;
+
+        path {
+            fill: rgba(245, 174, 42, 0.459);
+            stroke-width: 20px;
+            stroke: rgb(245, 174, 42);
+            stroke-dasharray: 1900;
+            stroke-dashoffset: 1900;
+        }
+    }
+}
+
 .contato {
     position: fixed;
     bottom: 50px;

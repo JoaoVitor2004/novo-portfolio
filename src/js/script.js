@@ -3,22 +3,64 @@ const nameInput = document.querySelector("#name")
 const email = document.querySelector("#email")
 const message = document.querySelector("#message")
 
+// animation gsap
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
 ScrollSmoother.create({
-	smooth: 1, // how long (in seconds) it takes to "catch up" to the native scroll position
-	effects: true, // looks for data-speed and data-lag attributes on elements
-	smoothTouch: 0.1 // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    smooth: 1,
+    effects: true,
+    smoothTouch: 0.1
 });
 
-gsap.from("#img-hero", {
-    y: -100,
-    duration: 2
+const animarPagina = () => {
+
+    const texts = document.querySelectorAll(".text")
+
+    texts.forEach((text) => {
+
+        const split = SplitText.create(".text", {
+            type: "lines words chars",
+            mask: "lines"
+        })
+
+        gsap.from(split.chars, {
+            y: 40,
+            opacity: 0,
+            stagger: .1,
+            ScrollTrigger: {
+                trigger: text
+            }
+        })
+
+    })
+
+    gsap.from("#img-hero", {
+        y: -100,
+        duration: 2
+    })
+
+}
+
+const tl = gsap.timeline({
+    onComplete() {
+        gsap.to("#preloader", {
+            opacity: 0,
+            display: "none"
+        })
+        document.body.style.overflow = "visible"
+        animarPagina()
+    }
 })
 
-gsap.from("#texts", {
-    opacity: 0,
-    duration: 2
+tl.to("#preloader path", {
+    strokeDashoffset: 0,
+    duration: 2,
+})
+
+tl.to("#preloader path", {
+    fill: "rgb(245, 174, 42)",
+    duration: 1,
 })
 
 const checkEmail = (value) => {
@@ -56,7 +98,7 @@ form.addEventListener("submit", (ev) => {
 
     ev.preventDefault()
 
-    if (nameInput.value === "" || nameInput.value.match(/[0-9]/gm)) {
+    if (nameInput.value === "") {
         showMessageError("Digite um nome valido!")
         return
     }
@@ -73,4 +115,5 @@ form.addEventListener("submit", (ev) => {
 
     alert("Dados enviados!")
     form.submit()
+    form.reset()
 })
