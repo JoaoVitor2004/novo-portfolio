@@ -172,6 +172,11 @@ li {
 .preloader svg {
   width: 20vw;
 }
+@media (width < 450px) {
+  .preloader svg {
+    width: 50vw;
+  }
+}
 .preloader svg path {
   fill: rgba(245, 174, 42, 0.459);
   stroke-width: 20px;
