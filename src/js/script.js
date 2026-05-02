@@ -46,7 +46,8 @@ const tl = gsap.timeline({
     onComplete() {
         gsap.to("#preloader", {
             opacity: 0,
-            display: "none"
+            height: 0,
+            duration: 1
         })
         document.body.style.overflow = "visible"
         animarPagina()
@@ -55,11 +56,11 @@ const tl = gsap.timeline({
 
 tl.to("#preloader path", {
     strokeDashoffset: 0,
-    duration: 2,
+    duration: 1,
 })
 
 tl.to("#preloader path", {
-    fill: "rgb(245, 174, 42)",
+    fill: "#000",
     duration: 1,
 })
 

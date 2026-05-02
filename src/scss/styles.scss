@@ -48,16 +48,16 @@
     justify-content: center;
 
     svg {
-        width: 20vw;
+        width: 60vw;
 
         @media (width < 450px) {
-            width: 50vw;
+            width: 200vw;
         }
 
         path {
-            fill: rgba(245, 174, 42, 0.459);
+            fill: #00000079;
             stroke-width: 20px;
-            stroke: rgb(245, 174, 42);
+            stroke: #000;
             stroke-dasharray: 1900;
             stroke-dashoffset: 1900;
         }
