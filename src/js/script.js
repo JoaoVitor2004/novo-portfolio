@@ -2,8 +2,9 @@ const form = document.querySelector("#form")
 const nameInput = document.querySelector("#name")
 const email = document.querySelector("#email")
 const message = document.querySelector("#message")
+const texts = document.querySelectorAll(".text")
 
-// animation gsap
+// gsap animation
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
@@ -15,11 +16,9 @@ ScrollSmoother.create({
 
 const animarPagina = () => {
 
-    const texts = document.querySelectorAll(".text")
-
     texts.forEach((text) => {
 
-        const split = SplitText.create(".text", {
+        const split = SplitText.create(text, {
             type: "lines words chars",
             mask: "lines"
         })
@@ -29,7 +28,8 @@ const animarPagina = () => {
             opacity: 0,
             stagger: .1,
             ScrollTrigger: {
-                trigger: text
+                trigger: text,
+                markers: true,
             }
         })
 
@@ -46,11 +46,12 @@ const tl = gsap.timeline({
     onComplete() {
         gsap.to("#preloader", {
             opacity: 0,
+            display: "none",
             height: 0,
             duration: 1
         })
-        document.body.style.overflow = "visible"
         animarPagina()
+        document.body.style.overflow = "visible"
     }
 })
 
@@ -63,6 +64,8 @@ tl.to("#preloader path", {
     fill: "#000",
     duration: 1,
 })
+
+// Form submit
 
 const checkEmail = (value) => {
     const regex = new RegExp(

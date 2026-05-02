@@ -174,7 +174,7 @@ li {
 }
 @media (width < 450px) {
   .preloader svg {
-    width: 200vw;
+    width: 100vw;
   }
 }
 .preloader svg path {
